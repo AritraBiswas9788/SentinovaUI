@@ -1,27 +1,142 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ShareRow extends StatelessWidget {
   const ShareRow({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Future<void> shareToSocialMedia({
+      required String platform,
+      required String message,
+      List<String> hashtags = const [],
+    }) async {
+      final tagString =
+          hashtags.map((tag) => tag.startsWith('#') ? tag : '#$tag').join(' ');
+      final fullMessage = '$message\n\n$tagString';
+
+      Uri? url;
+
+      switch (platform.toLowerCase()) {
+        case 'facebook':
+          url = Uri.parse(
+            'https://www.facebook.com/sharer/sharer.php?u=${Uri.encodeComponent(fullMessage)}',
+          );
+          break;
+        case 'twitter':
+        case 'x':
+          url = Uri.parse(
+            'https://twitter.com/intent/tweet?text=${Uri.encodeComponent(fullMessage)}',
+          );
+          break;
+        case 'linkedin':
+          url = Uri.parse(
+            'https://www.linkedin.com/sharing/share-offsite/?url=${Uri.encodeComponent(fullMessage)}',
+          );
+          break;
+        case 'reddit':
+          url = Uri.parse(
+            'https://www.reddit.com/submit?title=${Uri.encodeComponent(fullMessage)}',
+          );
+          break;
+        case 'instagram':
+          // Instagram doesn't support text-based web sharing. Only images/videos can be shared.
+          // You can open the Instagram app (if installed)
+          final instagramUri = Uri.parse('instagram://app');
+          if (await canLaunchUrl(instagramUri)) {
+            await launchUrl(instagramUri);
+          } else {
+            // Fallback
+            print('Instagram not installed');
+          }
+          return;
+        default:
+          throw Exception('Unsupported platform');
+      }
+
+      if (url != null) {
+        try {
+          await launchUrl(url, mode: LaunchMode.inAppBrowserView);
+        } catch (e) {
+          print(e);
+        }
+      } else {
+        print('Could not launch $url');
+      }
+    }
+
+    Future<void> openInstagramApp() async {
+      final Uri instagramUri = Uri.parse('instagram://app');
+
+      if (await canLaunchUrl(instagramUri)) {
+        await launchUrl(instagramUri, mode: LaunchMode.externalApplication);
+      } else {
+        // Optionally fall back to the Instagram website
+        final Uri fallbackUrl = Uri.parse('https://www.instagram.com/');
+        if (await canLaunchUrl(fallbackUrl)) {
+          await launchUrl(fallbackUrl, mode: LaunchMode.externalApplication);
+        } else {
+          print('Could not open Instagram.');
+        }
+      }
+    }
+
     final shareButtons = [
       {
         'path': 'assets/facebook_share.png',
-        'onTap': () => print('Share to Facebook')
+        'onTap': () async {
+          print('Share to Facebook');
+
+          await shareToSocialMedia(
+            platform: 'facebook',
+            message: 'Check out this cool thing!',
+            hashtags: ['Flutter', 'Dart'],
+          );
+
+          // try{
+          //   final response = await flutterShareMe.shareToFacebook(
+          //       url: "https://pub.dev/packages/flutter_share_me", msg: "msg").timeout(Duration(seconds: 5));
+          // }catch(e)
+          // {
+          //   print(e);
+          // }
+        }
       },
-      {'path': 'assets/x_share.png', 'onTap': () => print('Share to Twitter')},
+      {
+        'path': 'assets/x_share.png',
+        'onTap': () async {
+          await shareToSocialMedia(
+            platform: 'twitter',
+            message: 'Check out this cool thing!',
+            hashtags: ['Flutter', 'Dart'],
+          );
+        }
+      },
       {
         'path': 'assets/instagram_share.png',
-        'onTap': () => print('Share to Instagram')
+        'onTap': ()async{
+          openInstagramApp();
+        }
       },
       {
         'path': 'assets/linkedin_share.png',
-        'onTap': () => print('Share to LinkedIn')
+        'onTap': ()async{
+          await shareToSocialMedia(
+            platform: 'linkedin',
+            message: 'Check out this cool thing!',
+            hashtags: ['Flutter', 'Dart'],
+          );
+        }
       },
       {
         'path': 'assets/reddit_share.png',
-        'onTap': () => print('Share to WhatsApp')
+        'onTap': () async {
+          await shareToSocialMedia(
+            platform: 'reddit',
+            message: 'Check out this cool thing!',
+            hashtags: ['Flutter', 'Dart'],
+          );
+        }
       },
     ];
 
@@ -89,7 +204,8 @@ class _GlowingShareIconState extends State<GlowingShareIcon> {
                 Padding(
                   padding: const EdgeInsets.all(2),
                   child: Container(
-                      width: 36, height: 36,
+                    width: 36,
+                    height: 36,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.0),
                       boxShadow: [
