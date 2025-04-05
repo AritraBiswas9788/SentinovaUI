@@ -529,14 +529,14 @@ class _DashboardState extends State<Dashboard> {
                                   children: [
                                     IssueButton(
                                       label: 'Overcrowding',
-                                      icon: Icons.circle_rounded, // You can customize per button
+                                      icon: ImageIcon(AssetImage('assets/overcrowding.png',), color: Colors.white,), // You can customize per button
                                       onTap: () {
                                         print('Button ${0 + 1} tapped!');
                                       },
                                     ),
                                     IssueButton(
                                       label: 'Long lines',
-                                      icon: Icons.circle_rounded, // You can customize per button
+                                      icon: ImageIcon(AssetImage('assets/queue.png',), color: Colors.white,), // You can customize per button
                                       onTap: () {
                                         print('Button ${0 + 1} tapped!');
                                       },
@@ -551,14 +551,14 @@ class _DashboardState extends State<Dashboard> {
                                   children: [
                                     IssueButton(
                                       label: 'Food Issues',
-                                      icon: Icons.circle_rounded, // You can customize per button
+                                      icon: ImageIcon(AssetImage('assets/foodproblems.png',), color: Colors.white,), // You can customize per button
                                       onTap: () {
                                         print('Button ${0 + 1} tapped!');
                                       },
                                     ),
                                     IssueButton(
                                       label: 'Speaker issues',
-                                      icon: Icons.circle_rounded, // You can customize per button
+                                      icon: ImageIcon(AssetImage('assets/speakerissue.png',), color: Colors.white,), // You can customize per button
                                       onTap: () {
                                         print('Button ${0 + 1} tapped!');
                                       },
@@ -573,14 +573,14 @@ class _DashboardState extends State<Dashboard> {
                                   children: [
                                     IssueButton(
                                       label: 'Tech Glitches',
-                                      icon: Icons.circle_rounded, // You can customize per button
+                                      icon: ImageIcon(AssetImage('assets/marketing.png',), color: Colors.white,), // You can customize per button
                                       onTap: () {
                                         print('Button ${0 + 1} tapped!');
                                       },
                                     ),
                                     IssueButton(
                                       label: 'Other...',
-                                      icon: Icons.circle_rounded, // You can customize per button
+                                      icon: Icon(Icons.circle, color: Colors.white,) ,// You can customize per button
                                       onTap: () {
                                         print('Button ${0 + 1} tapped!');
                                       },

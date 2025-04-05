@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class IssueButton extends StatefulWidget {
   final String label;
-  final IconData icon;
+  final Widget icon;
   final VoidCallback onTap;
 
   const IssueButton({
@@ -98,7 +98,7 @@ class _IssueButtonState extends State<IssueButton> with SingleTickerProviderStat
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(widget.icon, color: Colors.white, size: 20),
+              widget.icon,
               const SizedBox(width: 12),
               Text(
                 widget.label,
