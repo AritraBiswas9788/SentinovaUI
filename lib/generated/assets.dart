@@ -7,12 +7,17 @@ class Assets {
   static const String assetsCommunity = 'assets/community.png';
   static const String assetsFacebook = 'assets/facebook.png';
   static const String assetsFacebookShare = 'assets/facebook_share.png';
+  static const String assetsFoodproblems = 'assets/foodproblems.png';
   static const String assetsInstagram = 'assets/instagram.png';
   static const String assetsInstagramShare = 'assets/instagram_share.png';
   static const String assetsLinkedin = 'assets/linkedin.png';
   static const String assetsLinkedinShare = 'assets/linkedin_share.png';
+  static const String assetsMarketing = 'assets/marketing.png';
+  static const String assetsOvercrowding = 'assets/overcrowding.png';
+  static const String assetsQueue = 'assets/queue.png';
   static const String assetsReddit = 'assets/reddit.png';
   static const String assetsRedditShare = 'assets/reddit_share.png';
+  static const String assetsSpeakerissue = 'assets/speakerissue.png';
   static const String assetsTwitter = 'assets/twitter.png';
   static const String assetsXShare = 'assets/x_share.png';
   static const String componentsCardsRow = 'lib/components/cards_row.dart';
@@ -24,7 +29,7 @@ class Assets {
   static const String componentsInstagramCard = 'lib/components/instagram_card.dart';
   static const String componentsInstagramPost = 'lib/components/instagram_post.dart';
   static const String componentsIssueButton = 'lib/components/issue_button.dart';
-  static const String componentsLeaveFeedbacl = 'lib/components/leave_feedback.dart';
+  static const String componentsLeaveFeedback = 'lib/components/leave_feedback.dart';
   static const String componentsLinkedinCard = 'lib/components/linkedin_card.dart';
   static const String componentsLinkedinPost = 'lib/components/linkedin_post.dart';
   static const String componentsMediaCard = 'lib/components/media_card.dart';
@@ -34,9 +39,17 @@ class Assets {
   static const String componentsSocialStream = 'lib/components/social_stream.dart';
   static const String componentsTwitterCard = 'lib/components/twitter_card.dart';
   static const String componentsTwitterPost = 'lib/components/twitter_post.dart';
+  static const String dataclassCommetModel = 'lib/dataclass/commet_model.dart';
+  static const String dataclassEventModel = 'lib/dataclass/event_model.dart';
+  static const String dataclassPostModel = 'lib/dataclass/post_model.dart';
   static const String dataclassSocialMediaPost = 'lib/dataclass/SocialMediaPost.dart';
+  static const String dataclassUserModel = 'lib/dataclass/user_model.dart';
   static const String generatedAssets = 'lib/generated/assets.dart';
   static const String libMain = 'lib/main.dart';
   static const String screensDashboard = 'lib/screens/dashboard.dart';
+  static const String screensEventPassGate = 'lib/screens/event_pass_gate.dart';
+  static const String screensLandingPage = 'lib/screens/landing_page.dart';
+  static const String screensQrScannerScreen = 'lib/screens/qr_scanner_screen.dart';
+  static const String servicesApiServiceEvents = 'lib/services/api_service_events.dart';
 
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:sentinova_hackfest/screens/dashboard.dart';
+import 'package:sentinova_hackfest/screens/landing_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => const Dashboard(), // Root route
+        '/': (context) => LandingPage(), // Root route
         // Settings route
       },
       theme: ThemeData(

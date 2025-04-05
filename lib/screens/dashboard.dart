@@ -19,9 +19,12 @@ import '../components/issue_button.dart';
 import '../components/linkedin_card.dart';
 import '../components/reddit_card.dart';
 import '../components/twitter_card.dart';
+import '../dataclass/event_model.dart';
 
 class Dashboard extends StatefulWidget {
-  const Dashboard({super.key});
+  final Event event;
+
+  const Dashboard({super.key, required this.event});
 
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -29,7 +32,7 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
 
-  final List<SocialMediaPost> dummyPosts = [
+  List<SocialMediaPost> dummyPosts = [
     SocialMediaPost(
       platform: 'Reddit',
       postId: 'r1',
@@ -331,6 +334,7 @@ class _DashboardState extends State<Dashboard> {
       sentiment: 'positive',
     ),
   ];
+
 
 
 
