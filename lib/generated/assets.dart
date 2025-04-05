@@ -8,6 +8,8 @@ class Assets {
   static const String assetsFacebook = 'assets/facebook.png';
   static const String assetsFacebookShare = 'assets/facebook_share.png';
   static const String assetsFoodproblems = 'assets/foodproblems.png';
+  static const String assetsIcon = 'assets/icon.png';
+  static const String assetsIcon2 = 'assets/icon2.png';
   static const String assetsInstagram = 'assets/instagram.png';
   static const String assetsInstagramShare = 'assets/instagram_share.png';
   static const String assetsLinkedin = 'assets/linkedin.png';
@@ -29,10 +31,12 @@ class Assets {
   static const String componentsInstagramCard = 'lib/components/instagram_card.dart';
   static const String componentsInstagramPost = 'lib/components/instagram_post.dart';
   static const String componentsIssueButton = 'lib/components/issue_button.dart';
+  static const String componentsKeyInputField = 'lib/components/key_input_field.dart';
   static const String componentsLeaveFeedback = 'lib/components/leave_feedback.dart';
   static const String componentsLinkedinCard = 'lib/components/linkedin_card.dart';
   static const String componentsLinkedinPost = 'lib/components/linkedin_post.dart';
   static const String componentsMediaCard = 'lib/components/media_card.dart';
+  static const String componentsQrCards = 'lib/components/qr_cards.dart';
   static const String componentsRedditCard = 'lib/components/reddit_card.dart';
   static const String componentsRedditPost = 'lib/components/reddit_post.dart';
   static const String componentsShareRow = 'lib/components/share_row.dart';
@@ -50,6 +54,7 @@ class Assets {
   static const String screensEventPassGate = 'lib/screens/event_pass_gate.dart';
   static const String screensLandingPage = 'lib/screens/landing_page.dart';
   static const String screensQrScannerScreen = 'lib/screens/qr_scanner_screen.dart';
+  static const String screensSplashScreen = 'lib/screens/splash_screen.dart';
   static const String servicesApiServiceEvents = 'lib/services/api_service_events.dart';
 
 }
