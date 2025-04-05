@@ -94,7 +94,7 @@ class InstagramPost extends StatelessWidget {
           const SizedBox(height: 6),
           // Post content (truncated)
           Text(
-            post.text.length > 80 ? '${post.text.substring(0, 77)}...' : post.text,
+            post.text.length > 40 ? '${post.text.substring(0, 37)}...' : post.text,
             style: const TextStyle(
               color: Color(0xFFFDF2F8), // Soft pink-ish white
               fontSize: 12,

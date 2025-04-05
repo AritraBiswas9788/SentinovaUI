@@ -91,7 +91,7 @@ class TwitterPost extends StatelessWidget {
           const SizedBox(height: 6),
           // Truncated Post Content
           Text(
-            post.text.length > 80 ? '${post.text.substring(0, 77)}...' : post.text,
+            post.text.length > 40 ? '${post.text.substring(0, 37)}...' : post.text,
             style: const TextStyle(
               color: Color(0xFFE5E7EB),
               fontSize: 12,

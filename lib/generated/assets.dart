@@ -39,9 +39,17 @@ class Assets {
   static const String componentsSocialStream = 'lib/components/social_stream.dart';
   static const String componentsTwitterCard = 'lib/components/twitter_card.dart';
   static const String componentsTwitterPost = 'lib/components/twitter_post.dart';
+  static const String dataclassCommetModel = 'lib/dataclass/commet_model.dart';
+  static const String dataclassEventModel = 'lib/dataclass/event_model.dart';
+  static const String dataclassPostModel = 'lib/dataclass/post_model.dart';
   static const String dataclassSocialMediaPost = 'lib/dataclass/SocialMediaPost.dart';
+  static const String dataclassUserModel = 'lib/dataclass/user_model.dart';
   static const String generatedAssets = 'lib/generated/assets.dart';
   static const String libMain = 'lib/main.dart';
   static const String screensDashboard = 'lib/screens/dashboard.dart';
+  static const String screensEventPassGate = 'lib/screens/event_pass_gate.dart';
+  static const String screensLandingPage = 'lib/screens/landing_page.dart';
+  static const String screensQrScannerScreen = 'lib/screens/qr_scanner_screen.dart';
+  static const String servicesApiServiceEvents = 'lib/services/api_service_events.dart';
 
 }
