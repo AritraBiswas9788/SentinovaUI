@@ -96,7 +96,9 @@ class TwitterPost extends StatelessWidget {
               color: Color(0xFFE5E7EB),
               fontSize: 12,
               height: 1.4,
+
             ),
+            maxLines: 2,
           ),
         ],
       ),

@@ -101,6 +101,8 @@ class LinkedinPost extends StatelessWidget {
               fontSize: 12,
               height: 1.4,
             ),
+            maxLines: 2,
+
           ),
         ],
       ),
